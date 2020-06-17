@@ -133,3 +133,17 @@ def intersection_mult(*args):
     return set_intersect
 
 # print(intersection_mult(list1, list2, list3))
+
+
+''' Complement Function '''
+sample_space = union_mult_sets(list1, list2, list3)
+print(sample_space)
+print(list3)
+def complement(samp_space, set_):
+    comp = []
+    for item in samp_space:
+        if item not in set_:
+            comp.append(item)
+    return comp
+
+print(complement(sample_space, list3))
