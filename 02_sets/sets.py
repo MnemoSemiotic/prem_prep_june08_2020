@@ -30,4 +30,22 @@ for lst in sample_space:
     pass
 
 '''What is the probability of rolling an 8?'''
-print(sums.count(8) / len(sums))
+# print(sums.count(8) / len(sums))
+
+
+
+
+'''Simple Union function for sets'''
+list1 = ['bear', 'cat', 'dog', 'dolphin']
+list2 = ['bear', 'dog', 'elephant', 'weasel', 'mink', 'mountain lion']
+
+def union(set1, set2):
+    set_union = []
+    for item in set1:
+        set_union.append(item)
+    for item in set2:
+        if item not in set_union:
+            set_union.append(item)
+    return set_union
+
+print(union(list1, list2))
