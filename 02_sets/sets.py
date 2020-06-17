@@ -146,4 +146,18 @@ def complement(samp_space, set_):
             comp.append(item)
     return comp
 
-print(complement(sample_space, list3))
+# print(complement(sample_space, list3))
+
+
+''' Breakout Solution '''
+coin_flip = ['H', 'T']
+
+samp_space = []
+
+for flip1 in coin_flip:
+    for flip2 in coin_flip:
+        for flip3 in coin_flip:
+            for flip4 in coin_flip:
+                samp_space.append(f'{flip1}{flip2}{flip3}{flip4}')
+
+print(samp_space)
