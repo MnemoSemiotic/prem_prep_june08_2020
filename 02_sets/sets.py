@@ -1,4 +1,4 @@
-# list/set trick "dedupe"
+'''list/set trick "dedupe"'''
 
 some_list = [1,2,3,7,8,4,4,4,9,8,4,5,6,4,8,9,1,3]
 
@@ -12,8 +12,18 @@ for element in some_list:
 # print(some_list_listset)
 # print(some_list_deduped_inorder)
 
+''' Brief intro to *args '''
+def demo_star_args(*args):
+    for item in args:
+        print(item)
+    return None
 
+var1 = True
+var2 = 'I\'m a string'
+var3 = [8,9,7,2,3,4,7,8,9]
+var4 = ['some', 'words', 'innit']
 
+# demo_star_args(var1, var2, var3, var4, some_list)
 
 '''Create Sample Space for the roll of 2 6 sided dice'''
 
@@ -36,9 +46,9 @@ for lst in sample_space:
 
 
 '''Simple Union function for sets'''
-list1 = ['bear', 'cat', 'dog', 'dolphin']
+list1 = ['bear', 'cat', 'dog', 'dolphin', 'weasel']
 list2 = ['bear', 'dog', 'elephant', 'weasel', 'mink', 'mountain lion']
-list3 = ['bear', 'whale', 'sea cucumber', 'weasel', 'mink', 'eagle']
+list3 = ['bear', 'whale', 'sea cucumber', 'mink', 'eagle', 'dog']
 
 def union(set1, set2):
     set_union = []
@@ -95,3 +105,31 @@ for outcome in samp_space:
 
 
 # print(union(A, B))
+
+
+''' Intersection'''
+def intersection(set1, set2):
+    set_intersect = []
+    for item in set1:
+        if item in set2:
+            set_intersect.append(item)
+    
+    return set_intersect
+
+# print(intersection(list1, list2))
+
+
+def intersection_mult(*args):
+    set_intersect = []
+    
+    for item in args[0]:
+        flag = True
+        for set_ in args:
+            if item not in set_:
+                flag = False
+        if flag == True:
+            set_intersect.append(item)
+    
+    return set_intersect
+
+# print(intersection_mult(list1, list2, list3))
