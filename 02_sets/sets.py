@@ -38,6 +38,7 @@ for lst in sample_space:
 '''Simple Union function for sets'''
 list1 = ['bear', 'cat', 'dog', 'dolphin']
 list2 = ['bear', 'dog', 'elephant', 'weasel', 'mink', 'mountain lion']
+list3 = ['bear', 'whale', 'sea cucumber', 'weasel', 'mink', 'eagle']
 
 def union(set1, set2):
     set_union = []
@@ -48,4 +49,14 @@ def union(set1, set2):
             set_union.append(item)
     return set_union
 
-print(union(list1, list2))
+# print(union(list1, list2))
+
+def union_mult_sets(*args):
+    set_union = []
+    for lst in args:
+        for item in lst:
+            if item not in set_union:
+                set_union.append(item)
+    return set_union
+
+print(union_mult_sets(list1, list2, list3))
