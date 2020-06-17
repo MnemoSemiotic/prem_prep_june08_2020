@@ -137,8 +137,8 @@ def intersection_mult(*args):
 
 ''' Complement Function '''
 sample_space = union_mult_sets(list1, list2, list3)
-print(sample_space)
-print(list3)
+# print(sample_space)
+# print(list3)
 def complement(samp_space, set_):
     comp = []
     for item in samp_space:
@@ -160,4 +160,34 @@ for flip1 in coin_flip:
             for flip4 in coin_flip:
                 samp_space.append(f'{flip1}{flip2}{flip3}{flip4}')
 
-print(samp_space)
+# print(samp_space)
+# print()
+A = []
+B = []
+C = []
+for outcome in samp_space:
+    if outcome.count('H') >= 3:
+        A.append(outcome)
+    if outcome.count('T') <= 2:
+        B.append(outcome)
+    if outcome.count('H') == 4 or outcome.count('T') == 4:
+        C.append(outcome)
+
+# print('A',A)
+# print('B',B)
+# print('C',C)
+
+# print(intersection(A, complement(samp_space, C)))
+
+# print(complement(samp_space, intersection(A, C)))
+
+'''Set Difference'''
+def difference(set1, set2):
+    set_diff = []
+    for item in set1:
+        if item not in set2:
+            set_diff.append(item)
+    return set_diff
+
+# print(difference(list1, list2))
+# print(difference(list2, list1))
