@@ -59,4 +59,39 @@ def union_mult_sets(*args):
                 set_union.append(item)
     return set_union
 
-print(union_mult_sets(list1, list2, list3))
+# print(union_mult_sets(list1, list2, list3))
+
+
+
+'''Slide 8 Breakout'''
+
+four_sided = [1,2,3,4]
+coin_flip = ['H', 'T']
+
+samp_space = []
+for roll in four_sided:
+    for flip1 in coin_flip:
+        for flip2 in coin_flip:
+            samp_space.append([roll, flip1, flip2])
+
+for outcome in samp_space:
+    # print(outcome)
+    pass
+
+A = []
+for outcome in samp_space:
+    if outcome[0] == 1:
+        A.append(outcome)
+
+# print(A)
+
+B = []
+
+for outcome in samp_space:
+    if outcome.count('H') >= 1:
+        B.append(outcome)
+
+# print(B)
+
+
+# print(union(A, B))
