@@ -13,3 +13,21 @@ for element in some_list:
 # print(some_list_deduped_inorder)
 
 
+
+
+'''Create Sample Space for the roll of 2 6 sided dice'''
+
+sample_space = []
+sums = []
+
+for i in range(1, 6+1):
+    for j in range(1, 6+1):
+        sample_space.append([i,j])
+        sums.append(i+j)
+
+for lst in sample_space:
+    # print(f'{lst}: {lst[0]+lst[1]}')
+    pass
+
+'''What is the probability of rolling an 8?'''
+print(sums.count(8) / len(sums))
