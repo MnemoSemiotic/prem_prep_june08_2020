@@ -111,3 +111,4 @@ DeMorgan’s Laws
 '''
 # print((not (a or b)) == (not a) and (not b))
 # print(not (a and b) == (not a) or (not b))
+
