@@ -1,3 +1,5 @@
+'''NOTE: these set operations are using lists, not sets'''
+
 '''list/set trick "dedupe"'''
 
 some_list = [1,2,3,7,8,4,4,4,9,8,4,5,6,4,8,9,1,3]
