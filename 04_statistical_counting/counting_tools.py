@@ -121,7 +121,7 @@ Let's take a sampling approach to building permutations and combinations
 '''
 from random import choice
 
-def get_permutations(vals=[0,1,2,3,4], length=5):
+def get_permutation(vals=[0,1,2,3,4], length=5):
     output = []
 
     for _ in range(1000):
@@ -135,5 +135,25 @@ def get_permutations(vals=[0,1,2,3,4], length=5):
         
     return output
 
-for _ in range(10):
-    print(get_permutations())
+
+def build_permutations(vals=[0,1,2,3,4], exp_len=5):
+    draws = 0
+
+    permutations = []
+
+    while len(permutations) < int(perm(exp_len,len(vals))):
+        arrang = get_permutation(vals, exp_len)
+        draws += 1
+
+        if arrang not in permutations:
+            permutations.append(arrang)
+        
+    return permutations, draws
+
+perms = build_permutations(['dog','cat','bear','squid','rat'], exp_len=3)
+
+for perm in perms[0]:
+    print(perm)
+
+print('num perms', len(perms[0]))
+print('draws', perms[1])
