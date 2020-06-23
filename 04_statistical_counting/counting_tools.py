@@ -63,3 +63,54 @@ Breakout slide 15
 
 def comb(n, k):
     return int(factorial(n) / factorial(n-k) * factorial(k))
+
+
+# 20C3 ... think of this as we have 20 items in a bag, and we're wondering how many different combinations of these items can we make
+
+def combinations_intuition():
+    twenty_nums = list(range(1, 21))
+
+    # find every arrangement of 3
+    possible_three = []
+
+    for i in twenty_nums:
+        for j in twenty_nums:
+            for k in twenty_nums:
+                possible_three.append([i, j, k])
+
+    # print(len(possible_three))
+
+    # find permutations
+    permutations = []
+
+    for three in possible_three:
+        permutation = True
+
+        for num in three:
+            if three.count(num) > 1:
+                permutation = False
+                break
+        if permutation:
+            permutations.append(three)
+
+    # print(len(permutations))
+
+    # let's remove perms that have the same same elements as other permutations
+    combinations = []
+
+    for three in permutations:
+        sorted_three = sorted(three)
+        if sorted_three not in combinations:
+            combinations.append(sorted_three)
+
+
+    # print(len(combinations))
+    return combinations
+
+
+for comb in combinations_intuition():
+    print(comb)
+
+
+print(len(combinations_intuition()))
+
