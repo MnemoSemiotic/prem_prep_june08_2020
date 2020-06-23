@@ -194,13 +194,11 @@ def build_combinations(vals=list(range(1,21)), length=3):
 
         # print(len(combinations))
 
-    print('should be', comb(len(vals), length))
+    # print('should be', comb(len(vals), length))
 
     return combinations, draws
 
 # print(get_combination(vals=list(range(1,21)), length=3))
-print(comb(20,3))
-
 
 combs, draws = build_combinations(vals=list(range(1,21)), length=3)
 
