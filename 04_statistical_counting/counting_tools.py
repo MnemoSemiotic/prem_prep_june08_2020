@@ -108,9 +108,32 @@ def combinations_intuition():
     return combinations
 
 
-for comb in combinations_intuition():
-    print(comb)
+# for comb in combinations_intuition():
+#     print(comb)
 
 
-print(len(combinations_intuition()))
+# print(len(combinations_intuition()))
 
+
+
+'''
+Let's take a sampling approach to building permutations and combinations
+'''
+from random import choice
+
+def get_permutations(vals=[0,1,2,3,4], length=5):
+    output = []
+
+    for _ in range(1000):
+        if len(output) == length:
+            break
+    
+        val = choice(vals)
+        
+        if val not in output:
+            output.append(val)
+        
+    return output
+
+for _ in range(10):
+    print(get_permutations())
