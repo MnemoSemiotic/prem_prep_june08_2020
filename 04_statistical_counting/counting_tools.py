@@ -46,5 +46,20 @@ def permutations_nP3(base=5):
     return permutations
 
 
-print(len(permutations_nP3(base=5)))
-print(perm(n=5, k=3))
+# print(len(permutations_nP3(base=5)))
+# print(perm(n=5, k=3))
+
+
+'''
+Breakout slide 15
+'''
+
+# n = 10
+# k = 3
+# print(perm(10, 3))
+# print(perm(9, 2))
+
+
+
+def comb(n, k):
+    return int(factorial(n) / factorial(n-k) * factorial(k))
