@@ -62,7 +62,7 @@ Breakout slide 15
 
 
 def comb(n, k):
-    return int(factorial(n) / factorial(n-k) * factorial(k))
+    return int(factorial(n) / (factorial(n-k) * factorial(k)))
 
 
 # 20C3 ... think of this as we have 20 items in a bag, and we're wondering how many different combinations of these items can we make
@@ -152,8 +152,61 @@ def build_permutations(vals=[0,1,2,3,4], exp_len=5):
 
 perms = build_permutations(['dog','cat','bear','squid','rat'], exp_len=3)
 
-for perm in perms[0]:
-    print(perm)
+# for perm in perms[0]:
+#     print(perm)
 
-print('num perms', len(perms[0]))
-print('draws', perms[1])
+# print('num perms', len(perms[0]))
+# print('draws', perms[1])
+
+
+
+
+'''
+combinations
+'''
+
+def get_combination(vals=list(range(1,21)), length=3):
+    output = []
+
+    for _ in range(1000):
+        if len(output) == length:
+            break
+        
+        num = choice(vals)
+
+        if num not in output:
+            output.append(num)
+
+    return sorted(output)
+
+
+def build_combinations(vals=list(range(1,21)), length=3):
+    draws = 0
+
+    combinations = []
+
+    while len(combinations) < int(comb(len(vals), length)):
+        arrang = get_combination(vals, length)
+        draws += 1
+
+        if arrang not in combinations:
+            combinations.append(arrang)
+
+        # print(len(combinations))
+
+    print('should be', comb(len(vals), length))
+
+    return combinations, draws
+
+# print(get_combination(vals=list(range(1,21)), length=3))
+print(comb(20,3))
+
+
+combs, draws = build_combinations(vals=list(range(1,21)), length=3)
+
+for comb in combs:
+    print(comb)
+
+print('num combs', len(combs))
+print('draws', draws)
+
