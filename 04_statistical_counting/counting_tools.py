@@ -8,4 +8,14 @@ def factorial(num):
 
     return accum
 
-print(factorial(5))
+# print(factorial(5))
+
+def perm(n, k):
+    return int(factorial(n) / factorial(n-k))
+
+# print(perm(10, 3))
+
+
+'''
+Let's get all the permutations from a list of items
+'''
