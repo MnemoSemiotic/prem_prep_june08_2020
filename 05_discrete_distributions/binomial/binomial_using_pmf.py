@@ -9,4 +9,6 @@ def factorial(num):
 
 
 def combinations(n, k):
-    pass
+    return int( factorial(n) / (factorial(n-k) * factorial(k)))
+
+def binomial_pmf(n, k, p=0.5):
