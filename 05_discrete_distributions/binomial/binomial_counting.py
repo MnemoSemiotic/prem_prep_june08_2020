@@ -35,17 +35,27 @@ def gen_8_bit_binary_with_fors():
                                     bin_lst.append([i,j,k,l,m,n,o,p])
     return bin_lst
 
+
+def binomial_distr(list_of_binary):
+    binomial_dict = {}
+
+    for lst in list_of_binary:
+        sum_ = sum(lst)
+        if sum_ not in binomial_dict:
+            binomial_dict[sum_] = 0
+        binomial_dict[sum_] += 1
+
+    return binomial_dict
+
+
 list_of_binary =  gen_8_bit_binary_with_fors()
 
-binom_dict_8_trials = {}
+binom_dict_8_trials = binomial_distr(list_of_binary)
 
-for bin_list in list_of_binary:
-    print(bin_list)
-    sum_of_bits = sum(bin_list)
-    if sum_of_bits not in binom_dict_8_trials:
-        binom_dict_8_trials[sum_of_bits] = 0
-    binom_dict_8_trials[sum_of_bits] += 1
 
 for k, v in binom_dict_8_trials.items():
     print(f'{k}: {v}')
+
+
+
 
