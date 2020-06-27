@@ -81,7 +81,7 @@ def binomial_distr(binary_dict):
     return binomial_dict
 
 
-d = get_binary()
+d = get_binary(n_bits=6)
 
 # for k, v in d.items():
 #     print(f'{k}: {v}')
@@ -89,7 +89,7 @@ d = get_binary()
 binomial_dict = binomial_distr(d)
 
 for k, v in binomial_dict.items():
-    print(f'{k}: {v}')
+    print(f'{k}: {"*"*v}')
 
 
 # for_loop_binary =  gen_8_bit_binary_with_fors()
