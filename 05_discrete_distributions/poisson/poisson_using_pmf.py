@@ -39,9 +39,25 @@ def poisson_cdf_dict(lmbda, low_k, high_k):
 
     return d
 
-for k, v in poisson_cdf_dict(10, 0, 50).items():
-    print(f'{k}: {v}')
+# for k, v in poisson_cdf_dict(10, 0, 50).items():
+#     print(f'{k}: {v}')
 
+
+'''
+You are observing a phenomenon that follows perfectly a poisson process. Given a certain number of observations (10,000), how many events would you expect for each value of k, given a lmbda of 10, low_k=0, to high_k=30?
+'''
+
+def poisson_counts(lmbda, low_k, high_k, num_samples=10000):
+    d = {}
+
+    for k in range(low_k, high_k+1):
+        d[k] = int(poisson_pmf(lmbda, k) * 10000)
+
+    return d
+
+
+for k, v in poisson_counts(10, 0, 30, 10000).items():
+    print(f'{k}: {v}')
 
 '''
 There's a busy intersection in Denver, where 30 cars pass by every 10 minutes. What is the probability that 40 cars will pass by if observing a new ten minute time period?
