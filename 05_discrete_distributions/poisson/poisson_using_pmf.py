@@ -11,3 +11,9 @@ def factorial(n):
     return prod
 
 # print(factorial(5))
+
+from math import e
+def poisson_pmf(lmbda, k):
+    return (lmbda**k * e**(lmbda * -1))/ factorial(k)
+
+print(poisson_pmf(10, 10))
