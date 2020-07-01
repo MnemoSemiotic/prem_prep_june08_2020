@@ -56,8 +56,8 @@ def poisson_counts(lmbda, low_k, high_k, num_samples=10000):
     return d
 
 
-for k, v in poisson_counts(10, 0, 30, 10000).items():
-    print(f'{k}: {v}')
+# for k, v in poisson_counts(10, 0, 30, 10000).items():
+#     print(f'{k}: {v}')
 
 '''
 There's a busy intersection in Denver, where 30 cars pass by every 10 minutes. What is the probability that 40 cars will pass by if observing a new ten minute time period?
@@ -85,3 +85,30 @@ There a doorway where we expect 10 people to walk through every 5 minutes. What 
 # print(poisson_pmf(lmbda=10, k=10)) # 0.125
 
 
+
+
+'''
+3 req per hour
+
+what is the Proba of k=10 requests in 2 hrs?
+lmbda = 6
+'''
+print(poisson_pmf(lmbda=6, k=10)) # 0.0413
+
+'''
+3 req per hour
+
+k=0
+3/4 req per 15 minutes
+'''
+print(poisson_pmf(lmbda=(3/4), k=0)) # 0.472
+
+
+'''
+On average, 20 taxis drive past your office every 20 minutes, 
+
+what is the probability that 30 taxis will drive by in 1 hour?
+
+lmbda 60
+'''
+print(poisson_pmf(lmbda=60, k=30)) # 0.0000073
