@@ -53,10 +53,31 @@ def geometric_pmf_dict(p, k, inclusive=False):
             d[r] = geom_pmf(p, r, inclusive=inclusive)
     return d
 
-for k, v in geometric_pmf_dict(p=0.5, k=10, inclusive=False).items():
+# for k, v in geometric_pmf_dict(p=0.5, k=10, inclusive=False).items():
+#     print(f'{k}: {v}')
+
+# print('\n')
+
+# for k, v in geometric_pmf_dict(p=0.5, k=10, inclusive=True).items():
+#     print(f'{k}: {v}')
+
+
+def geometric_cdf_dict(p, k, inclusive=False):
+    d = {}
+
+    if inclusive:
+        for r in range(1, k+1):
+            d[r] = geom_cdf_closed(p, r, inclusive=inclusive)
+    else:
+        for r in range(0, k+1):
+            d[r] = geom_cdf_closed(p, r, inclusive=inclusive)
+    return d
+
+k = 20
+for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=False).items():
     print(f'{k}: {v}')
 
 print('\n')
 
-for k, v in geometric_pmf_dict(p=0.5, k=10, inclusive=True).items():
+for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=True).items():
     print(f'{k}: {v}')
