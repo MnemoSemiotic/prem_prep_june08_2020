@@ -73,7 +73,7 @@ def geometric_cdf_dict(p, k, inclusive=False):
             d[r] = geom_cdf_closed(p, r, inclusive=inclusive)
     return d
 
-k = 20
+k = 30
 for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=False).items():
     print(f'{k}: {v}')
 
