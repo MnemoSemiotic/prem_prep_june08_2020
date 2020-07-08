@@ -73,11 +73,11 @@ def geometric_cdf_dict(p, k, inclusive=False):
             d[r] = geom_cdf_closed(p, r, inclusive=inclusive)
     return d
 
-k = 30
-for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=False).items():
-    print(f'{k}: {v}')
+# k = 30
+# for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=False).items():
+#     print(f'{k}: {v}')
 
-print('\n')
+# print('\n')
 
-for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=True).items():
-    print(f'{k}: {v}')
+# for k, v in geometric_cdf_dict(p=0.5, k=k, inclusive=True).items():
+#     print(f'{k}: {v}')
